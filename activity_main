@@ -1,0 +1,13 @@
+<EditText
+android:id="@+id/editTextEmail"
+android:hint="email">
+<EditText/>
+<EditText
+android:id="@+id/editTextPass"
+android:hint="password">
+<EditText/>
+<Switch
+android:id="@+id/SRemember"
+android:gravity="right"></Switch>
+<Button
+android:id="@+id/btnLog><Button>
