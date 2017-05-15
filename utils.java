@@ -1,0 +1,1 @@
+private SharedPreferences spref;
