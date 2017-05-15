@@ -11,7 +11,7 @@ onCreate{
 BindUI();
 
 spref = getSharedPreferences("preferences",Context.MODE_PRIVATE);
-
+setCredentialIfExist();
 
 btnlog.SetOnCLickListener(new View..){
   private void Onclick(){
@@ -38,7 +38,7 @@ private void Verificar(){
 if(mail.lenght <= 0){
  Toast.makeText(this,"this fields mail can't be empty,please try again",Toast.LENGHT_SHORT).show();}
  elseif(pass.lenght <= 0){
- Toast.makeText(this,"this fields pass can't be empty, please try again, Toast.LENGHT_SHORT).show();}
+ Toast.makeText(this,"this fields pass can't be empty, please try again", Toast.LENGHT_SHORT).show();}
  else{
   }
 }
@@ -49,11 +49,22 @@ private void goToMain(){
 }
 
 private void SavePreferences(email,password,remember){
-  if(remember.getShowText()){
+  if(remember.isChecked()){
     SharedPreferences.Editor edtor = spref.edit();
     editor.putString("email",email);
     editor.putString("pass",pass);
     editor.putBoolean("swith",remember);
     editor.commit();
+  }
+}
+
+private void setCredentialIfExist(){
+  String email = spref.getString("email");
+  String password = spref.getString("pass");
+ 
+  if(email.lenght > 0 && pass.lenght > 0){
+    mail.setText(email);
+    pass.setText(pass);
+    remember.setChecked(true);
   }
 }
