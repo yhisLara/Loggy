@@ -1,0 +1,6 @@
+<menu xmlns:androclass="http://schemas.android.com/apk/res/android" >  
+    <item  android:id="@+id/item1"  
+        android:title="Log out"/>  
+    <item  android:id="@+id/item2"  
+        android:title="Log out and delete"/>  
+</menu>  
