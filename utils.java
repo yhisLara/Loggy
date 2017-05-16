@@ -4,4 +4,10 @@ public class Utils {
  
  public static getUserPassPref(SharedPreferences preferences){return preferences.getString("pass","");}
   
+ public static deleteUserAndPass(SharedPreferences preferences){
+  preferences.edit().remove("email").commit();
+  preferences.edit().remove("pass").commit();
+  return true;
+ }
+  
 }
